@@ -1,6 +1,6 @@
  # Symex
 
- A symbolic executor for binary ninja's MLIL, which I used to solve a control flow flattening challenge.
+ A symbolic executor for binary ninja's MLIL. This was used to successfully solve a control flow flattening challenge.
 - Supports SSA form
 - Supports state forking
 
