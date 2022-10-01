@@ -233,7 +233,6 @@ class SymbolicExecutionEngine:
         # Note: all memory is symbolic.
         return None
 
-
     def handle_load_ssa(self, instr: MediumLevelILLoadSsa):
         z3_src = self.execute_instruction(instr.src)
 
