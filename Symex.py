@@ -29,20 +29,18 @@ class Z3Variable:
         self.name : str = name
         self.z3Variable = z3Variable
 
-class SymbolicEmulator:
+class SymbolicExecutionEngine:
     def __init__(self, func : Function, mlil : MediumLevelILFunction):
         self.func = func
         self.mlil = mlil
         self.solver = z3.Solver()
         self.variable_mapping = dict()
-        self.specialCount = 0
         self.expressions = []
 
     def fork(self):
-        copy = SymbolicEmulator(self.func, self.mlil)
+        copy = SymbolicExecutionEngine(self.func, self.mlil)
         copy.solver = z3.Solver()
         copy.variable_mapping = dict(self.variable_mapping)
-        copy.specialCount = self.specialCount
         copy.expressions = self.expressions.copy()
 
         return copy
@@ -441,7 +439,3 @@ class SymbolicEmulator:
         result : Z3Variable = Z3Variable(name, z3MemPointer)
         self.variable_mapping[name] = result
         return result
-        
-
-      
-    
