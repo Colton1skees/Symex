@@ -5,5 +5,5 @@
 - Supports state forking
 
 Additional info:
-- Requires z3 
-- Symbolizes on memory load / store
+- Memory is symbolized on load / store
+- Z3 is required
